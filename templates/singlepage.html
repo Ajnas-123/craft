@@ -1,0 +1,781 @@
+
+{% extends 'headerfooter.html' %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+<style data-shopify>.theme-logo img{
+    max-width: 120px !important;
+  }
+  .header-section {
+    background-color: #ffffff;
+  }
+  .main-menu > ul > li > a {
+    color: #222222;
+  }  
+  .main-menu > ul > li > a::before {
+    background-color: #222222;
+  }
+  .sub-menu {
+    background-color: #222222;
+  }
+  .sub-menu li a, .mega-menu li.col > a {
+    color: #d8d8d8;
+  }
+
+  .main-menu > ul > li:hover > a {
+    color: #222222;
+  }  
+  .main-menu > ul > li:hover > a::before {
+    background-color: #222222;
+  }
+  .sub-menu li:hover > a {
+    color: #d0a97e;
+  }
+
+  .header-wishlist,
+  .header-section .dropdown-toggle::after,
+  .header-section .currency-trigger, 
+  .header-section .header-cart-toggle span, 
+  .header-section .header-cart-toggle i, 
+
+  .header-section .user-menu-active .dropdown-toggle i, 
+  .header-section .header-search .search-toggle i  {
+      color: #222222;
+      border-top-color: #222222;
+  }  
+  .header-wishlist:hover,
+  .header-section .dropdown-toggle:hover::after,
+  .header-section .currency-trigger:hover, 
+  .header-section .header-cart-toggle span:hover, 
+  .header-section .header-cart-toggle i:hover, 
+  .header-section .user-menu-active .dropdown-toggle i:hover, 
+  .header-section .header-search .search-toggle i:hover  {
+      color: #000000;
+      border-top-color: #000000;
+  }
+
+
+  .mobile-menu .mean-bar .meanmenu-reveal span.menu-bar {
+	  background-color: #222222;
+  }
+
+  .mobile-menu .mean-bar .meanmenu-reveal span.menu-bar,
+  .mobile-menu .mean-bar .meanmenu-reveal span.menu-bar::before, 
+  .mobile-menu .mean-bar .meanmenu-reveal span.menu-bar::after,
+  .mobile-menu .mean-bar .meanmenu-reveal span.menu-close::before, 
+  .mobile-menu .mean-bar .meanmenu-reveal span.menu-close::after {
+	  background-color: #222222;
+  }
+  .mobile-menu .mean-bar .mean-nav {
+      background-color: #ffffff;
+  }
+  .mobile-menu .mean-bar .mean-nav > ul li a {
+      color: #222222;
+  }
+  .mobile-menu .mean-bar .mean-nav > ul li a:hover {
+      color: #d0a97e;
+  }
+
+
+  .header-mini-cart {
+      background-color: ;
+  }
+  .mini-cart-head h3 {
+      color: ;
+  }
+  .mini-cart-head,
+  .mini-cart-body {
+      border-color: ;
+  }
+  .mini-cart-product .content .title {
+      color: ;
+  }
+  .mini-cart-product .content .title:hover {
+      color: ;
+  }
+  .mini-cart-product .content span {
+      color: ;
+  }
+  .mini-cart-product .image .remove {
+      background-color: ;
+      color: ;
+  }
+  .mini-cart-product .image .remove:hover {
+      background-color: ;
+      color: ;
+  }
+  .mini-cart-footer h4 {
+      color: ;
+  }
+  .mini-cart-footer .buttons a {
+      background-color: ;
+      color: ;
+  }
+  .mini-cart-footer .buttons a:hover {
+      background-color: ;
+      color: ;
+  }</style>
+
+
+
+</div>
+          {% for x in qid %}
+
+<div class="page-banner-section section breadcrumbs overlay-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="page-banner text-center">
+          <h1 class="breadcrumbs-title">{{x.name}}</h1>
+          
+<ul class="breadcrumb-list page-breadcrumb">
+
+  <li>
+    <a href="../index.html" title="Back to the home page">Home</a>
+  </li>
+  <li>
+    
+
+    
+
+    <span>{{x.name}}</span>
+
+    
+  </li>
+</ul>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<main>
+
+
+
+
+
+
+
+      <div id="shopify-section-product-template" class="shopify-section"><div class="product-section section pt-90 pb-90 pt-lg-80 pb-lg-80 pt-md-70 pb-md-70 pt-sm-60 pb-sm-60 pt-xs-50 pb-xs-50" section-product-template>
+  <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+          {% for x in qid %}
+
+
+    <div class="row ">
+
+
+      <div class="col-lg-12 without-sidebar col-12 mb-sm-50 mb-xs-50">
+
+        <div class="product-details mb-50">
+          <!-- Image -->
+
+          <!-- {% for x in qid %} -->
+          <div class="product-image bottom-thumbnail mb-xs-20">
+            <!-- Image -->
+
+            <div class="product-slider">
+              <div class="item" id="ProductPhoto">
+
+                <img id="ProductPhotoImg" class="product_variant_image product-zoom" 
+                     data-image-id="" alt="1. New and sale badge product" 
+                     data-zoom-image="/static/img/product_01_1024x1024.png?v=1564655327" 
+                     src="{{x.item.url}}">
+              </div>
+            </div><div class="product-slider single-product-thumb-slider-syn" id="ProductThumbs" >
+              
+              
+              
+            </div>
+
+          </div>
+            <!-- {% endfor %} -->
+            
+
+
+
+          
+
+
+
+
+          <!-- {% for x in qid %} -->
+          <!-- Content -->
+          <div class="product-content">
+            <form method="post" action="https://louis-demo.myshopify.com/cart/add" id="AddToCartForm" accept-charset="UTF-8" class="shopify-product-form" enctype="multipart/form-data">
+              <input type="hidden" name="form_type" value="product" />
+              <input type="hidden" name="utf8" value="✓" />   
+              <div class="product-content-inner">
+                <div class="head">
+                  <!-- Title & Ratting -->
+                  <div class="left">
+                    <h4 class="title" id="popup_cart_title">{{x.name}}</h4>
+                    <!-- Price -->
+                   <!--  <div class="right">
+                      <span class="price"><span id="ProductPrice"><span class=money>$110.00</span></span> 
+                        <span class="old"><span id="ComparePrice"><span class=money>$130.00</span></span></span>
+                      </span>                  
+                    </div> -->
+                    <span class="ratting">
+                      <span class="shopify-product-reviews-badge" data-id="3972777967698"></span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="body">
+  <div class="product-description">
+<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,</p>
+
+</div>
+
+
+
+<!-- <div class="quantity quantity-selector">
+                    <h4>Quantity:</h4>
+                    <div class="pro-qty"><input type="text" value="1" name="quantity"></div>
+                  </div> -->
+                  <!-- <div class="product-cart-action product-action"> -->
+  
+
+  
+ <!--  <button type="submit" class="" id="AddToCart">
+    <span>
+      <span class="cart-title cart" id="AddToCartText">Add to cart</span>
+    </span>
+  </button> -->
+  
+  
+  <script>
+    jQuery('#AddToCart').click(function(e) {
+      e.preventDefault();
+      Shopify.addItemFromFormStart('AddToCartForm', 3972777967698);
+                                   }); 
+  </script>
+  
+  
+  
+  
+<!-- <a class="wishlist" href="../account/login.html" title="Wishlist">
+  <span class="icon"><i class="bardy bardy-wishlist"></i><i class="hover-icon bardy bardy-wishlist"></i></span>
+</a> -->
+
+  
+</div>
+<div data-shopify="payment-button" class="shopify-payment-button"><button class="shopify-payment-button__button shopify-payment-button__button--unbranded shopify-payment-button__button--hidden" disabled="disabled" aria-hidden="true"> </button><button class="shopify-payment-button__more-options shopify-payment-button__button--hidden" disabled="disabled" aria-hidden="true"> </button></div>
+<!-- Share -->
+<div class="share-icons">
+
+  
+
+  
+
+  <span>Share:</span>
+
+  <link href="/static/css/assets/social-icons.css" rel="stylesheet" type="text/css" media="all" />
+  <style>
+    .social-links a { display: -moz-inline-stack; display: inline-block; zoom: 1; *display: inline; margin: 0; padding: 0.05em; color: #555!important; font-size: 24px!important; }
+  </style>
+  <span class="social-links">
+    <a href="#" title="Follow us on Facebook" target="_blank">
+      <span><i class="fa fa-facebook-square" aria-hidden="true" style="color: blue"></i></span></a>
+
+
+    <a href="#" title="Follow us on Twitter" target="_blank">
+      <!-- <span class="shopify-social-icon-twitter-rounded color"></span></a>  -->
+      <span><i class="fa fa-twitter-square" aria-hidden="true" style="color: cyan" ></i></span></a>
+
+
+
+
+    <a href="#" title="Share on Google+" title="Follow us on Google+" target="_blank">
+      <!-- <span class="shopify-social-icon-googleplus-rounded color"></span></a> -->
+      <span><i class="fa fa-google-plus-square" aria-hidden="true" style="color: #B22222" ></i></span></a>
+
+
+    
+    <a href="#" title="Follow us on Pinterest" target="_blank">
+      <!-- <span class="shopify-social-icon-pinterest-rounded color"></span></a> -->
+      <span><i class="fa fa-pinterest-square" aria-hidden="true" style="color: red" ></i></span></a>
+
+    
+  </span>
+
+</div>
+<div class="custom-payment-options"></div></div>
+              </div>
+
+
+              <!-- {% endfor %} -->
+
+              
+            </form>
+          </div>
+        </div>
+        
+     
+
+
+
+
+
+<div class="product-description-review-area">
+  <div class="container">
+    <div class="product-description-review">
+      <div class="description-review-title nav" role=tablist>
+        
+        <a href="#pro-dec" data-toggle="tab" role="tab" class="active" aria-selected="true">
+          Description
+        </a>
+
+     <!--    <a href="##pro-dec1" data-toggle="tab" role="tab" >
+          Rv
+        </a> -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      <div class="description-review-text tab-content">
+        <div class="tab-pane active" id="pro-dec" role="tabpanel">
+
+        <!-- {% for x in qid %} -->
+
+          <p>{{x.description}}</p>
+
+          <!-- {% endfor %} -->
+
+        <!-- <span class="spr-starrating spr-summary-starrating">
+        <i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star-half-alt"></i> -->
+        <!-- </span> -->
+        <span class="spr-summary-caption"><span class='spr-summary-actions-togglereviews'>Based on 2 reviews</span>
+        </span>
+        <span class="spr-summary-actions">
+        <!-- <a href='#' class='spr-summary-actions-newreview' >Write a review</a> -->
+        <!-- review showing -->
+     <!--    {% for x in view %}
+        <div>
+        <p>{{x.user_id}}<span><b>on</b></span>12-23-3333</p>
+        <p>{{x.review}}</p>
+      </div>
+      {% endfor %} -->
+
+
+      </span>
+
+
+        {% for x in view %}
+        <div class="spr-container">
+        <div class="spr-review-header">
+        <span class="spr-review-header-byline">
+          <strong>{{x.user_id.firstname}}</strong> on <strong>{{x.date}}</strong></span>
+        </div>
+
+
+        <div class="spr-review-content">
+        <p class="spr-review-content-body">{{x.review}}</p>
+      </div>
+    </div>
+      {% endfor %} 
+
+       
+
+
+
+      <form method="post" action="/review/">
+        {% csrf_token %}
+      <div class="spr-form-input">
+      <textarea name="review" placeholder="write your comments here" style="height: 250px; width: 1200px";></textarea>
+      </div>
+      <input type="text" name="nid" value="{{x.id}}" hidden="">
+      <input type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary" value="submit review">
+
+    </form>
+</div>
+        
+        
+        <div class="tab-pane " id="pro-review" role="tabpanel">
+          <div id="shopify-product-reviews" data-id="3972777967698"><style scoped>.spr-container {
+    padding: 24px;
+    border-color: #ECECEC;}
+  .spr-review, .spr-form {
+    border-color: #ECECEC;
+  }
+</style>
+
+
+<div class="spr-container">
+  <div class="spr-header">
+    <h2 class="spr-header-title">Customer Reviews</h2><div class="spr-summary">
+
+        <span class="spr-starrating spr-summary-starrating">
+          <i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star"></i><i class="spr-icon spr-icon-star-half-alt"></i>
+        </span>
+        <span class="spr-summary-caption"><span class='spr-summary-actions-togglereviews'>Based on 2 reviews</span>
+        </span><span class="spr-summary-actions">
+        <a href='#' class='spr-summary-actions-newreview' >Write a review</a>
+      </span>
+    </div>
+  </div>
+
+  <div class="spr-content">
+    <div class='spr-form' id='form_3972777967698' style='display: none'></div>
+    <div class='spr-reviews' id='reviews_3972777967698' ></div>
+  </div>
+
+</div>
+<script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@type": "AggregateRating",
+        "reviewCount": "2",
+        "ratingValue": "4.5",
+        "itemReviewed": {
+          "@type" : "Product",
+          "name" : "1. New and sale badge product",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "",
+            "highPrice": "",
+            "priceCurrency": ""
+          }
+        }
+      }
+</script></div>
+        </div>
+          
+        
+
+        
+        <div role="tabpanel" class="tab-pane " id="comment-box">
+          <div class="fb-comment-box">
+            <!-- disqus comment box start -->
+            
+            <!-- disqus comment box end -->                
+            <!-- facebook comment box start -->
+            
+            <div class="fb-comments" data-href="https://louis-demo.myshopify.com/products/1-new-and-sale-badge-product" data-width="100%" data-numposts="10"></div>
+            <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "../../connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+            
+            <!-- facebook comment box end -->
+          </div>
+        </div>
+        
+
+        
+        
+        
+        <div class="tab-pane" id="custom-tab-1" role="tabpanel">
+          <h2>Shipping policy for our store</h2>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate</p>
+<ul>
+<li>1-2 business days (Typically by end of day)</li>
+<li><a href="#">30 days money back guaranty</a></li>
+<li>24/7 live support</li>
+<li>odio dignissim qui blandit praesent</li>
+<li>luptatum zzril delenit augue duis dolore</li>
+<li>te feugait nulla facilisi.</li>
+</ul>
+<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum</p>
+<p>claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per</p>
+<p>seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+        </div>
+        
+        
+        
+        
+        <div class="tab-pane" id="custom-tab-2" role="tabpanel">
+          <h2>Size Chart</h2>
+<table class="table">
+<tbody>
+<tr>
+<td class="cun-name"><span>UK</span></td>
+<td>18</td>
+<td>20</td>
+<td>22</td>
+<td>24</td>
+<td>26</td>
+</tr>
+<tr>
+<td class="cun-name"><span>European</span></td>
+<td>46</td>
+<td>48</td>
+<td>50</td>
+<td>52</td>
+<td>54</td>
+</tr>
+<tr>
+<td class="cun-name"><span>usa</span></td>
+<td>14</td>
+<td>16</td>
+<td>18</td>
+<td>20</td>
+<td>22</td>
+</tr>
+<tr>
+<td class="cun-name"><span>Australia</span></td>
+<td>28</td>
+<td>10</td>
+<td>12</td>
+<td>14</td>
+<td>16</td>
+</tr>
+<tr>
+<td class="cun-name"><span>Canada</span></td>
+<td>24</td>
+<td>18</td>
+<td>14</td>
+<td>42</td>
+<td>36</td>
+</tr>
+</tbody>
+</table>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+{% endfor %}
+</div>
+</div>
+
+
+
+
+
+
+
+        
+
+
+
+
+
+<style>
+  
+  
+  
+    
+
+  .product-details .product-content .product-content-inner .head .left .title {
+    color: ;
+  }
+  .product-details .product-content .product-content-inner .head .right .price {
+    color: ;
+  }
+  .product-details .product-content .product-content-inner .head .right .price .old {
+    color: ;
+  }
+  .product-details .product-content .product-content-inner .body p,
+  .product-details .product-content .product-content-inner .body .product-description {
+    color: ;
+  }
+  .product-details .product-content-inner .swatch .header,
+  .product-details .product-content .product-content-inner .body .quantity h4,
+  .product-details .product-content-inner .share-icons > span {
+    color: ;
+  }
+  
+  #ProductPhoto.item {
+    padding: 20px;
+    background-color: ;
+    border-color: ;
+  }
+  
+  .product-details .product-content .product-content-inner .body .quantity .pro-qty .qtybtn {
+    background-color: ;
+    color: ;
+  }
+  .product-details .product-content .product-content-inner .body .quantity .pro-qty input {
+    background-color: ;
+    color: ;
+  }
+  
+  .product-details .product-content .product-content-inner .body .product-action button > span {
+    background-color: #ffae00;
+    color: #ffffff;
+  }
+  .product-details .product-content .product-content-inner .body .product-action button > span:hover {
+    background-color: #222222;
+    color: #ffffff;
+  }
+
+  .product-details .product-content .product-content-inner .body a span.icon i, 
+  .product-details .product-content .product-content-inner .body button span.icon i {
+    color: ;
+  }
+  .product-details .product-content .product-content-inner .body a:hover span.icon i.hover-icon, 
+  .product-details .product-content .product-content-inner .body button:hover span.icon i.hover-icon {
+    color: ;
+  }
+    
+  .shopify-payment-button__button--unbranded {
+    background-color:  !important;
+    color:  !important;
+  }
+  .shopify-payment-button__button--unbranded:hover {
+    background-color: #ffae00 !important;
+    color: #ffffff !important;
+  }
+  
+</style>
+
+
+
+<script src="/static/js/jquery.elevateZoom-3.0.8.min.js?"></script>
+
+<link href="/static/jquery.fancybox15de.html?555" rel="stylesheet" type="text/css" media="all" />
+<script src="/static/js/jquery.fancybox.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.fancybox').fancybox();
+  });
+</script><script>
+  var selectCallback = function(variant, selector) {
+    timber.productPage({
+      money_format: "<span class=money>${{amount}}</span>",
+      variant: variant,
+      selector: selector
+    });
+    
+    if (variant) {
+      
+      // Current variant select+
+      var form = jQuery('#' + selector.domIdPrefix).closest('form');
+      for (var i=0,length=variant.options.length; i<length; i++) {
+        var val = variant.options[i].replace(/'/g,"&#039;");
+        var radioButton = form.find(".swatch[data-option-index='" + i + "'] :radio[value='" + val +"']");
+        if (radioButton.size()) {
+          radioButton.get(0).checked = true;
+        }
+      }
+
+      // Current sku pass
+      $('.variant-sku').text(variant.sku);
+    }else {
+      $('.variant-sku').empty();
+    }// product image zoom with variant
+    if (variant && variant.featured_image) { 
+      jQuery('#ProductThumbs a[data-image-id="' + variant.featured_image.id + '"]').trigger('click'); 
+    }};
+  
+
+
+  jQuery(function($) {
+    new Shopify.OptionSelectors('productSelect', {
+      product: {"id":3972777967698,"title":"1. New and sale badge product","handle":"1-new-and-sale-badge-product","description":"\u003cp\u003eContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\u003c\/p\u003e\n\u003cp\u003eThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\u003c\/p\u003e\n[new_products]300[\/new_products] [short_description]\n\u003cp\u003eContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,\u003c\/p\u003e\n[\/short_description] [product_description]\n\u003cp\u003eContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\u003c\/p\u003e\n\u003cp\u003eThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\u003c\/p\u003e\n[\/product_description]","published_at":"2019-08-01T00:11:18-04:00","created_at":"2019-08-01T00:11:18-04:00","vendor":"Vendor 1","type":"Type 1","tags":["blue","green","l","m","red","s","white","xl","yellow"],"price":11000,"price_min":11000,"price_max":11000,"available":true,"price_varies":false,"compare_at_price":13000,"compare_at_price_min":13000,"compare_at_price_max":13000,"compare_at_price_varies":false,"variants":[{"id":29630525833298,"title":"s \/ red","option1":"s","option2":"red","option3":null,"sku":"1510","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - s \/ red","public_title":"s \/ red","options":["s","red"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630525866066,"title":"s \/ green","option1":"s","option2":"green","option3":null,"sku":"1511","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - s \/ green","public_title":"s \/ green","options":["s","green"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630525898834,"title":"s \/ blue","option1":"s","option2":"blue","option3":null,"sku":"1512","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - s \/ blue","public_title":"s \/ blue","options":["s","blue"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630525931602,"title":"s \/ yellow","option1":"s","option2":"yellow","option3":null,"sku":"1513","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - s \/ yellow","public_title":"s \/ yellow","options":["s","yellow"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630525964370,"title":"s \/ white","option1":"s","option2":"white","option3":null,"sku":"1514","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - s \/ white","public_title":"s \/ white","options":["s","white"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630525997138,"title":"m \/ red","option1":"m","option2":"red","option3":null,"sku":"1515","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - m \/ red","public_title":"m \/ red","options":["m","red"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526029906,"title":"m \/ green","option1":"m","option2":"green","option3":null,"sku":"1516","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - m \/ green","public_title":"m \/ green","options":["m","green"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526062674,"title":"m \/ blue","option1":"m","option2":"blue","option3":null,"sku":"1517","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - m \/ blue","public_title":"m \/ blue","options":["m","blue"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526095442,"title":"m \/ yellow","option1":"m","option2":"yellow","option3":null,"sku":"1518","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - m \/ yellow","public_title":"m \/ yellow","options":["m","yellow"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526128210,"title":"m \/ white","option1":"m","option2":"white","option3":null,"sku":"1519","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - m \/ white","public_title":"m \/ white","options":["m","white"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526160978,"title":"l \/ red","option1":"l","option2":"red","option3":null,"sku":"1520","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - l \/ red","public_title":"l \/ red","options":["l","red"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526193746,"title":"l \/ green","option1":"l","option2":"green","option3":null,"sku":"1521","requires_shipping":true,"taxable":true,"featured_image":null,"available":false,"name":"1. New and sale badge product - l \/ green","public_title":"l \/ green","options":["l","green"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526226514,"title":"l \/ blue","option1":"l","option2":"blue","option3":null,"sku":"1522","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - l \/ blue","public_title":"l \/ blue","options":["l","blue"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526259282,"title":"l \/ yellow","option1":"l","option2":"yellow","option3":null,"sku":"1523","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - l \/ yellow","public_title":"l \/ yellow","options":["l","yellow"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526292050,"title":"l \/ white","option1":"l","option2":"white","option3":null,"sku":"1524","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - l \/ white","public_title":"l \/ white","options":["l","white"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526324818,"title":"xl \/ red","option1":"xl","option2":"red","option3":null,"sku":"1525","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - xl \/ red","public_title":"xl \/ red","options":["xl","red"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526357586,"title":"xl \/ green","option1":"xl","option2":"green","option3":null,"sku":"1526","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - xl \/ green","public_title":"xl \/ green","options":["xl","green"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526390354,"title":"xl \/ blue","option1":"xl","option2":"blue","option3":null,"sku":"1527","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - xl \/ blue","public_title":"xl \/ blue","options":["xl","blue"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526423122,"title":"xl \/ yellow","option1":"xl","option2":"yellow","option3":null,"sku":"1528","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - xl \/ yellow","public_title":"xl \/ yellow","options":["xl","yellow"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""},{"id":29630526455890,"title":"xl \/ white","option1":"xl","option2":"white","option3":null,"sku":"1529","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"1. New and sale badge product - xl \/ white","public_title":"xl \/ white","options":["xl","white"],"price":11000,"weight":0,"compare_at_price":13000,"inventory_management":"shopify","barcode":""}],"images":["\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_01.png?v=1564655327","#\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_02.png?v=1564655329","#\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_03.png?v=1564655331","#\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_04.png?v=1564655336","#\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_05.png?v=1564655338","\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_06.png?v=1564655340"],"featured_image":"\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_01.png?v=1564655327","options":["Size","Color"],"media":[{"alt":null,"id":1825032765522,"position":1,"preview_image":{"aspect_ratio":1.0,"height":1000,"width":1000,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_01.png?v=1569265252"},"aspect_ratio":1.0,"height":1000,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_01.png?v=1569265252","width":1000},{"alt":null,"id":1825032929362,"position":2,"preview_image":{"aspect_ratio":1.0,"height":1000,"width":1000,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_02.png?v=1569265252"},"aspect_ratio":1.0,"height":1000,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_02.png?v=1569265252","width":1000},{"alt":null,"id":1825032962130,"position":3,"preview_image":{"aspect_ratio":1.0,"height":1000,"width":1000,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_03.png?v=1569265252"},"aspect_ratio":1.0,"height":1000,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_03.png?v=1569265252","width":1000},{"alt":null,"id":1825033125970,"position":4,"preview_image":{"aspect_ratio":1.0,"height":1000,"width":1000,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_04.png?v=1569265252"},"aspect_ratio":1.0,"height":1000,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_04.png?v=1569265252","width":1000},{"alt":null,"id":1825033257042,"position":5,"preview_image":{"aspect_ratio":1.0,"height":1000,"width":1000,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_05.png?v=1569265252"},"aspect_ratio":1.0,"height":1000,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_05.png?v=1569265252","width":1000},{"alt":null,"id":1825033355346,"position":6,"preview_image":{"aspect_ratio":1.0,"height":1000,"width":1000,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_06.png?v=1569265252"},"aspect_ratio":1.0,"height":1000,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0252\/3594\/7602\/products\/product_06.png?v=1569265252","width":1000}],"content":"\u003cp\u003eContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\u003c\/p\u003e\n\u003cp\u003eThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\u003c\/p\u003e\n[new_products]300[\/new_products] [short_description]\n\u003cp\u003eContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,\u003c\/p\u003e\n[\/short_description] [product_description]\n\u003cp\u003eContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\u003c\/p\u003e\n\u003cp\u003eThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\u003c\/p\u003e\n[\/product_description]"},
+      onVariantSelected: selectCallback,
+      enableHistoryState: true
+    });
+
+    // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
+    
+
+    // Hide selectors if we only have 1 variant and its title contains 'Default'.
+    
+  });function productZoom(){
+    $(".product-zoom").elevateZoom({
+      gallery: 'ProductThumbs',
+      galleryActiveClass: "active",
+      zoomType: "inner",
+      cursor: "crosshair"
+    });$(".product-zoom").on("click", function(e) {
+      var ez = $('.product-zoom').data('elevateZoom');
+      $.fancybox(ez.getGalleryList());
+      return false;
+    });
+    
+  };
+  function productZoomDisable(){
+    if( $(window).width() < 767 ) {
+      $('.zoomContainer').remove();
+      $(".product-zoom").removeData('elevateZoom');
+      $(".product-zoom").removeData('zoomImage');
+    } else {
+      productZoom();
+    }
+  };
+
+  productZoomDisable();
+
+  $(window).resize(function() {
+    productZoomDisable();
+  });/*----- 
+      Quantity
+  --------------------------------*/
+  $('.pro-qty').prepend('<span class="dec qtybtn">-</span>');
+  $('.pro-qty').append('<span class="inc qtybtn">+</span>');
+  $('.qtybtn').on('click', function() {
+    var $button = $(this);
+    var oldValue = $button.parent().find('input').val();
+    if ($button.hasClass('inc')) {
+      var newVal = parseFloat(oldValue) + 1;
+    } else {
+      // Don't allow decrementing below zero
+      if (oldValue > 0) {
+        var newVal = parseFloat(oldValue) - 1;
+      } else {
+        newVal = 0;
+      }
+    }
+    $button.parent().find('input').val(newVal);
+  });  
+
+
+  
+</script></div>
+
+
+    </main>
+
+{% endblock %}
+   
